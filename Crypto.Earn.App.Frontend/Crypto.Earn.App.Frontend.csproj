@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+		    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+		    <ApplicationIcon>app_icon.ico</ApplicationIcon>
+        <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+        <PublishReadyToRun>True</PublishReadyToRun>
+        <SignAssembly>True</SignAssembly>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Common\Crypto.Earn.Common\Crypto.Earn.Common.csproj" />
+      <ProjectReference Include="..\Crypto.Earn.App.Backend\Crypto.Earn.App.Backend.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+	  <EmbeddedResource Include=".\app_icon.ico" />
+	  <EmbeddedResource Include=".\..\html-files.zip" />
+      <Content Include="app_icon.ico" />
+      <Content Include="nuget.config">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
+      <PackageReference Include="JWT" Version="9.0.0-beta1" />
+      <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1054.31" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Models\Communication\Backend" />
+    </ItemGroup>
+
+</Project>

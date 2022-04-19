@@ -1,0 +1,44 @@
+﻿<Window x:Class="Crypto.Earn.App.Frontend.InstallerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crypto.Earn.App.Frontend"
+        xmlns:installation="clr-namespace:Crypto.Earn.App.Frontend.WPF.Controls.Installation"
+        mc:Ignorable="d"
+        Title="IdleCollect Installer" Height="650" Width="400" Background="Transparent" WindowStyle="None" WindowStartupLocation="Manual" ResizeMode="NoResize" AllowsTransparency="True"
+        Foreground="#D3000000" Topmost="True">
+    <Border x:Name="FormBorder" CornerRadius="12" Background="#F2000000">
+        <Grid>
+            <!-- Foreground -->
+            <StackPanel Orientation="Vertical" Margin="20,20">
+                <Label Foreground="White" FontSize="30" FontWeight="Bold">IdleCollect.com</Label>
+                <Label Foreground="White" Opacity="0.25" FontSize="18">Installation manager</Label>
+                
+                <StackPanel Margin="0,30,0,0">
+                    <Label Foreground="White" FontSize="18" FontWeight="Bold">What can the app access?</Label>
+                    <installation:AccessInformationControl TitleText="Can prevent your PC from sleeping." SubText="Allow this application to disable automatic sleep."/>
+                    <installation:AccessInformationControl TitleText="Can access your GPU resources." SubText="Allow this application to Mine on your PC."/>
+                    <installation:AccessInformationControl TitleText="Can write files and make copies." SubText="Allow this application to save data locally."/>
+                    <installation:AccessInformationControl TitleText="Cannot access your personal files." SubText="Application cannot access files that it has not created." HasAccess="False"/>
+                </StackPanel>
+                
+                <StackPanel Margin="0,20,0,0">
+                    <Label Foreground="White" FontSize="18" FontWeight="Bold">Installation options</Label>
+                    <CheckBox x:Name="CreateDesktopShortcutCheckbox" IsChecked="True" Foreground="#0069FF" Margin="0,10,0,5">Create desktop shortcut.</CheckBox>
+                    <CheckBox x:Name="AddToStartupCheckbox" IsChecked="True" Foreground="#0069FF" Margin="0,5">Add to auto startup.</CheckBox>
+                </StackPanel>
+                
+                <Border x:Name="ErrorBox" Visibility="Hidden" BorderBrush="MediumVioletRed" Background="PaleVioletRed" BorderThickness="1" CornerRadius="3" Margin="0,30,0,0">
+                    <TextBlock x:Name="ErrorMessage" FontWeight="Bold" TextWrapping="Wrap" Margin="10, 10">Error message</TextBlock>
+                </Border>
+                
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Button x:Name="InstallButton" Cursor="Hand" Background="#0069FF" Foreground="White" Padding="20,6" Click="InstallButton_OnClick">Install</Button>
+                    <Button x:Name="CancelButton" Cursor="Hand" Background="Transparent" Foreground="White" Opacity="0.25" Padding="20, 6" Margin="210,0" Click="CancelButton_OnClick">Cancel</Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        
+    </Border>
+</Window>

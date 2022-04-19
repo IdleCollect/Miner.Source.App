@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IdleCollect.com - Authentication</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/base.js"></script>
+</head>
+<body>
+    <div style="position: absolute;width: 290px;height: 290px;background: #f4787833;filter: blur(100px);"></div>
+    <div style="position: absolute;width: 206px;height: 206px;background: #0069ff3b;filter: blur(100px);right: 0px;bottom: -70px;"></div>
+    <div style="position: absolute;width: 134px;height: 134px;background: #0069ff52;filter: blur(60px);left: 30px;top: 300px;"></div>
+    <div class="auth-form">
+        <img src="img/app/logo.svg" width="200" height="200" alt="logo" class="logo" />
+        <span style="visibility: collapse;" class="info" id="auth-tab-info">A browser tab has been opened with the login form, please login in the browser and come back here.</span>
+        <fieldset id="auth-controls">
+            <button onclick="redirectAuthentication('login')">
+                <div class="spinner"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>
+                <span class="lds-text">Login</span>
+            </button>
+            <button class="text-button" onclick="redirectAuthentication('register')">or make an account</button>
+        </fieldset>
+    </div>
+</body>
+</html>

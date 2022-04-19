@@ -1,0 +1,40 @@
+﻿<Window x:Class="Crypto.Earn.App.Frontend.DebugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Crypto.Earn.App.Frontend"
+        mc:Ignorable="d"
+        Title="DebugWindow" Height="500" Width="500" Topmost="True">
+    <Grid Margin="20">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                <Label>Active:</Label>
+                <Label x:Name="ActiveLabel">...</Label>
+            </StackPanel>
+            
+            <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                <Label>Hash Rate:</Label>
+                <Label x:Name="RateLabel">0.00</Label>
+            </StackPanel>
+            
+            <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                <Label>Intensity:</Label>
+                <Label x:Name="Intensity">-1</Label>
+            </StackPanel>
+            
+            <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                <Label>Running for:</Label>
+                <Label x:Name="RunningDuration">00:00:00 (hh:mm:ss)</Label>
+            </StackPanel>
+            
+            <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                <Label>Is paused:</Label>
+                <Label x:Name="PausedLabel">...</Label>
+            </StackPanel>
+            <ScrollViewer Height="230">
+                <StackPanel Orientation="Vertical" x:Name="Log"></StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>

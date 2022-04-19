@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto.Earn.App.Frontend", "Crypto.Earn.App.Frontend\Crypto.Earn.App.Frontend.csproj", "{2ABE520F-B773-4E2A-B225-555F172E49B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto.Earn.App.Backend", "Crypto.Earn.App.Backend\Crypto.Earn.App.Backend.csproj", "{C9A54CE3-523D-4E7B-BA4A-DA699A88FC54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4F92C5E7-0FF4-4B25-AE10-C5EBECC17CEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto.Earn.Common", "..\Common\Crypto.Earn.Common\Crypto.Earn.Common.csproj", "{9FED07CD-63EF-4BF8-A063-5D18ABD1642F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2ABE520F-B773-4E2A-B225-555F172E49B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ABE520F-B773-4E2A-B225-555F172E49B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ABE520F-B773-4E2A-B225-555F172E49B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ABE520F-B773-4E2A-B225-555F172E49B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A54CE3-523D-4E7B-BA4A-DA699A88FC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A54CE3-523D-4E7B-BA4A-DA699A88FC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A54CE3-523D-4E7B-BA4A-DA699A88FC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A54CE3-523D-4E7B-BA4A-DA699A88FC54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FED07CD-63EF-4BF8-A063-5D18ABD1642F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FED07CD-63EF-4BF8-A063-5D18ABD1642F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FED07CD-63EF-4BF8-A063-5D18ABD1642F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FED07CD-63EF-4BF8-A063-5D18ABD1642F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9FED07CD-63EF-4BF8-A063-5D18ABD1642F} = {4F92C5E7-0FF4-4B25-AE10-C5EBECC17CEF}
+	EndGlobalSection
+EndGlobal

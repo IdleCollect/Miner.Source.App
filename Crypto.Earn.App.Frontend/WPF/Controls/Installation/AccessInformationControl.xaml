@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Crypto.Earn.App.Frontend.WPF.Controls.Installation.AccessInformationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Crypto.Earn.App.Frontend.WPF.Controls.Installation"
+             mc:Ignorable="d"
+             d:DesignHeight="60" d:DesignWidth="300" Background="Transparent">
+    <StackPanel Orientation="Horizontal">
+        <Grid Width="30" Height="60">
+            <Ellipse x:Name="EllipseOuter" Width="10" Height="10" Opacity="0.25" Fill="#0069FF"></Ellipse>
+            <Ellipse x:Name="EllipseInner" Width="6" Height="6" Fill="#0069FF"></Ellipse>
+        </Grid>
+        <StackPanel Orientation="Vertical">
+            <Label x:Name="Title" Foreground="#0069FF" FontSize="18" Margin="0,0,0,-5" FontWeight="SemiBold">Can prevent your PC from sleeping.</Label>
+            <Label x:Name="Subtext" Foreground="White" Opacity="0.25">The application may</Label>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

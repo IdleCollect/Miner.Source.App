@@ -1,0 +1,30 @@
+﻿<Window x:Class="Crypto.Earn.App.Frontend.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crypto.Earn.App.Frontend"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        mc:Ignorable="d"
+        Title="IdleCollect" Height="650" Width="400" Background="Transparent" WindowStyle="None" WindowStartupLocation="Manual" ResizeMode="NoResize" AllowsTransparency="True"
+        Foreground="#D3000000" Topmost="True">
+    <DockPanel Background="Transparent">
+        <Border BorderThickness="1" CornerRadius="12" Height="650" Width="400" Background="#141414" ClipToBounds="True">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF141414" Offset="1"/>
+                    <GradientStop Color="#FF6C6C6C" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            
+            <wv2:WebView2 Name="webView" Loaded="OnWebViewLoaded" Height="650" Width="400"/>
+        </Border>
+        <tb:TaskbarIcon x:Name="notifyIcon"
+                        Visibility="Visible"
+                        ToolTipText="IdleCollect.com - make your PC work for you."
+                        MenuActivation="LeftOrRightClick"
+                        PopupActivation="DoubleClick"
+        />
+    </DockPanel>
+</Window>

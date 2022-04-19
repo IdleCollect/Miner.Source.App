@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IdleCollect.com - Authentication</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/home.css">
+
+    <script src="scripts/base.js"></script>
+    <script src="scripts/home.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <main>
+        <header data-screen="home|settings">
+            <div>
+                <h1 style="color: white; margin: 0;" data-message="Hello {{name}}">Loading...</h1>
+                <span>You are mining <strong>ETH</strong> with <strong><strong data-message="{{miners-now}}">...</strong> others</strong></span>
+            </div>
+            <div>
+                <span class="ribbon-label" data-message="{{mining-state}}">...</span>
+                <span data-message="{{mining-speed}}">~0 MH/s</span>
+            </div>
+        </header>
+        
+        <div class="content">
+           <div class="home" data-screen="home">
+                <div class="footer">
+                    <div class="rewards">
+                        <h2>Rewards <span>you are eligible for <span data-message="{{products-eligible}}">...</span> rewards</span></h2>
+                        <p>Don't see anything you like? <a onclick="backend.controls.links.navigate('external', 'https://idlecollect.com/dashboard/buy')">Click here</a> to view all offers</p>
+                        <div class="reward-container">
+                            <div class="reward">
+                                <img src="https://idlecollect.com/images/shop/products/discord-nitro.svg"/>
+                                <div class="reward-text">
+                                    <p><strong>Discord Nitro</strong></p>
+                                    <p>1 month</p>
+                                </div>
+                            </div>
+
+                            <div class="reward">
+                                <img src="https://idlecollect.com/images/shop/products/paypal.svg"/>
+                                <div class="reward-text">
+                                    <p><strong>PayPal</strong></p>
+                                    <p>$5</p>
+                                </div>
+                            </div>
+
+                            <div class="reward">
+                                <img src="https://idlecollect.com/images/shop/products/visa.svg"/>
+                                <div class="reward-text">
+                                    <p><strong>Visa</strong></p>
+                                    <p>$5</p>
+                                </div>
+                            </div>
+
+                            <div class="reward">
+                                <img src="https://idlecollect.com/images/shop/products/g2a.png"/>
+                                <div class="reward-text">
+                                    <p><strong>G2A</strong></p>
+                                    <p>$5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="data">
+                            <div class="estimated tooltip" data-text="An estimate on how much money your PC can earn if it were running 12 Hours per day at Medium intensity.">
+                                <h3 data-message="~ ${{balance-estimated-month}}">...</h3>
+                                <span>estimated per month</span>
+                            </div>
+                            <div class="current tooltip left" data-text="Balance is refreshed only once per hour, these numbers will not change until then.">
+                                <div><span>your total balance is <strong data-message="${{balance-total}}">...</strong></span></div>
+                                <div><span>earned this month <strong data-message="${{balance-month}}">...</strong></span></div>
+                            </div>
+                        </div>
+                        <div class="graph">
+                            <canvas id="hash-power-graph"></canvas>
+                        </div>
+                    </div>
+                </div>
+           </div>
+           
+            <div class="products" data-screen="products">
+                <h1>🏗️</h1>
+                <h3>This panel is still being built 🚧</h3>
+                <h3><a onclick="backend.controls.links.navigate('external', 'https://idlecollect.com/dashboard/buy')" class="nav-link">Redeem products on our website in the meantime</a></h3>
+            </div>
+            
+           <div class="settings" data-screen="settings">
+                <div class="setting">
+                    <div>
+                        <span>Auto Startup</span>
+                    </div>
+                    
+                    <div class="center">
+                        <input type="checkbox" id="auto-startup-setting" class="cbx" onchange="AutoStartupToggle()" style="display:none"/>
+                        <label for="auto-startup-setting" class="toggle"><span></span></label>
+                    </div>
+                </div>
+
+               <div class="setting">
+                   <div>
+                       <span>Disable Sleep</span>
+                   </div>
+
+                   <div class="center">
+                       <input type="checkbox" id="disable-sleep-setting" class="cbx" onchange="NoSleepToggle()" style="display:none"/>
+                       <label for="disable-sleep-setting" class="toggle"><span></span></label>
+                   </div>
+               </div>
+
+               <div class="setting">
+                   <div>
+                       <span>Pause Mining</span>
+                   </div>
+
+                   <div class="center">
+                       <label class="dropdown">
+
+                           <div id="pause-button" class="dd-button">
+                               
+                           </div>
+
+                           <input type="checkbox" class="dd-input">
+                           <ul class="dd-menu">
+                               <li onclick="PauseMining(1)">1 Hour</li>
+                               <li onclick="PauseMining(4)">4 Hours</li>
+                               <li onclick="PauseMining(12)">12 Hours</li>
+                               <li class="divider"></li>
+                               <li onclick="PauseMining(24*7)">Until Restart</li>
+                               <li id="pause-button-resume-divider" style="display: none" class="divider"></li>
+                               <li id="pause-button-resume-button" style="display: none" onclick="PauseMining(-1)">Resume</li>
+                           </ul>
+                       </label>
+                   </div>
+               </div>
+
+               <div class="setting">
+                   <div>
+                       <span data-message="{{name}}"></span>
+                   </div>
+
+                   <div class="center">
+                        <button class="red" onclick="Logout()">
+                            Log out
+                        </button>
+                   </div>
+               </div>
+
+               <div class="setting">
+                   <div>
+                       <span>Quit Application</span>
+                   </div>
+
+                   <div class="center">
+                       <button class="red" onclick="Quit()">
+                           Quit
+                       </button>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </main>
+    
+    <nav>
+        <a data-screen="home"><img src="img/nav/active/home.svg" alt="home" width="28" height="28"/></a>
+        <a data-screen="products"><img src="img/nav/default/products.svg" alt="products" width="28" height="28"/></a>
+        <a data-screen="settings"><img src="img/nav/default/settings.svg" alt="settings" width="28" height="28"/></a>
+    </nav>
+</body>
+</html>
